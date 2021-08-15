@@ -1,0 +1,18 @@
+===============================================
+==           Google Dictionary API           ==
+==                                           ==
+==              Cloudy Lu, 2021              ==
+===============================================
+
+help:
+@lang en      # switch language (replace `en` to other language codes)
+@langtb       # list language codes table
+
+@clr          # clear searching history
+@disp         # display searching history
+@track on     # turn recording history on or off
+
+@save         # exit and save config
+
+Acknowledgement:
+https://api.dictionaryapi.dev/ for providing the source of dictionary
