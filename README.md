@@ -3,36 +3,20 @@
 
 ## Acknowledge
 
-API provider: https://api.dictionaryapi.dev/
+See `welcome` file.
 
 ## Installation
 
-Install Python packages by running:
+For source code: Install Python packages by running
 
 ```
 pip install -r requirements
 ```
 
+For release: Unzip and run `main` executive file.
+
 ## Usage
 
 1. Input a word to inquiry its meaning.
-2. Commands:
-
-About language.
-
-`@lang en`: Switch language to English, require the argument 'language code'. For other languages, replance `en` with another language code. (default English)
-
-`@langtb`: Display all supported language code.
-
-About history.
-
-`@clr`: Clear all searching history.
-
-`@disp`: Display all searching history.
-
-`@track on`: Start to record searching history, require the argument `on` or `off`. (default off)
-
-Exit program.
-
-`@save`: Exit and save the config.
+2. Commands: see `welcome` file.
 
