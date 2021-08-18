@@ -1,20 +1,27 @@
 import json
 from requests import Session
 import os
+from playsound import playsound
 
 
 def url(lang: str, word: str) -> str:
     return f"https://api.dictionaryapi.dev/api/v2/entries/{lang}/{word}"
 
 
-with open('welcome', 'r') as f:
-    welcome = f.read()
+try:
+    with open('welcome', 'r') as f:
+        welcome = f.read()
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    with open('language_list', 'r') as f_:
+        language_list = f_.read()
+except (FileNotFoundError, json.JSONDecodeError):
+    input('Program files incomplete. Press enter to exit.')
+    exit(0)
+os.system('')
 print(welcome)
-with open('config.json', 'r') as f:
-    config = json.load(f)
 sess = Session()
 sess.trust_env = False
-os.system("")
 
 
 def set_language(*args):
@@ -22,10 +29,7 @@ def set_language(*args):
 
 
 def display_language_table(*args):
-    if 'lang_tb' not in locals():
-        with open('lang_tb', 'r') as f_:
-            lang_tb = f_.read()
-    print(lang_tb)
+    print(language_list)
 
 
 def display_history(*args):
@@ -36,25 +40,24 @@ def clear_history(*args):
     config['history'] = []
 
 
-def exit_and_save():
+def save():
     with open('config.json', 'w') as f_:
         json.dump(config, f_)
-    exit(0)
 
 
 def set_tracking_preference(*args):
     config['track'] = args[0]
 
 
+def play_pronunciation(*args):
+    playsound('https:' + args[0])
+
+
 hashed_function = {
-    "lang": set_language,
-    "langtb": display_language_table,
-
-    "disp": display_history,
-    "clr": clear_history,
-    "track": set_tracking_preference,
-
-    "save": exit_and_save,
+    "ls": set_language, "ll": display_language_table,
+    "hp": display_history, "hc": clear_history, "ht": set_tracking_preference,
+    "p": play_pronunciation,
+    "s": save,
 }
 
 

@@ -4,15 +4,21 @@
 ==              Cloudy Lu, 2021              ==
 ===============================================
 
-help:
-@lang en      # switch language (replace `en` to other language codes)
-@langtb       # list language codes table
+language:
+@ls [language_code]  # language/switch language
+@ll                  # language/list all language codes
 
-@clr          # clear searching history
-@disp         # display searching history
-@track on     # turn recording history on or off
+history:
+@hc           # history/clear searching history
+@hp           # history/print all searching history
+@ht [on/off]  # history/track or stop tracking history
 
-@save         # exit and save config
+play:
+@p [audio_link]  # play pronunciation
+
+save:
+@s     # save config
 
 Acknowledgement:
-https://api.dictionaryapi.dev/ for providing the source of dictionary
+https://api.dictionaryapi.dev/ for the data source of dictionary
+https://github.com/TaylorSMarks/playsound for playing sound function
