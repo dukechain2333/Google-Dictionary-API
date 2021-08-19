@@ -49,7 +49,6 @@ def display_query(meaning):
     for phonetic in meaning['phonetics']:
         display.append('    ' + phonetic['text'] + '    ' +
                        phonetic['audio'] if 'audio' in phonetic.keys() else '')
-        audio = phonetic['audio']
         display.append('\33[31mMeaning:\33[0m')
         for meaning_ in meaning['meanings']:
             if 'partOfSpeech' in meaning_.keys():
