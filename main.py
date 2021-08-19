@@ -71,6 +71,7 @@ def display_history(*args):
         history = json.load(file)
         for history_ in history['history']:
             display_query(history_)
+            print()
 
 
 def clear_history(*args):
